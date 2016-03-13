@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <title>Diretrizes UI</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Diretrizes UI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li><a href="cores.html">Cores</a></li>
+                    <li><a href="componentesBootstrap.html">Componentes Bootstrap</a></li>
+                    <li><a href="componentesNovos.html">Componentes Novos</a></li>
+                    <li class="active"><a href="componentesGraficos.html">Componentes Gráficos<span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-10 col-md-offset-2 main">
+                <h1 class="page-header">Componentes Gráficos</h1>
+                <p>Diretrizes UI para desenvolvimento do site promessômetro. Todas alterações e componentes novos devem ser registrados neste documento.</p>
+
+                <h2 class="sub-header">Gráficos</h2>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3 text-center">
+                        <canvas id="grafico1" width="200" height="200"></canvas>
+                        <h4 class="sem-margem-embaixo">Gráfico</h4>
+                        <div class="text-muted">Algo mais</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 text-center">
+                        <canvas id="grafico2" width="200" height="200"></canvas>
+                        <h4 class="sem-margem-embaixo">Gráfico</h4>
+                        <span class="text-muted">Algo mais</span>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 text-left">
+                        <div><span class="text-muted">HTML</span></div>
+                        <code>&lt;canvas id="idCanvas" width="100" height="100"&gt;&lt;/canvas&gt;</code><br/><br/>
+                        <div><span class="text-muted">JS</span></div>
+                        <code>
+                            dados = [ <br/>
+                            &nbsp;&nbsp;&nbsp;{ <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: XX, <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: #428BCA, <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;highlight: #337AB7, <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label: 'Aalguma coisa' <br/>
+                            &nbsp;&nbsp;&nbsp;} <br/>
+                            ]<br/><br/>
+                            criarDoughnut(dados, "#idCanvas");
+                        </code>
+                    </div>
+                </div>
+
+                <h2 class="sub-header">Mapa do Brasil</h2>
+                <div class="col-xs-6 col-sm-6 text-left">
+                    <div id="mapaBrasil"></div>
+                </div>
+                <div class="col-xs-6 col-sm-6 text-left">
+                    <div><span class="text-muted">HTML</span></div>
+                    <code>&lt;div id="mapaBrasil"&gt;&lt;/div&gt;</code><br/><br/>
+                    <div><span class="text-muted">JS</span></div>
+                    <code>
+                        criarMapa();
+                    </code>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="js/funcoes.js"></script>
+        <script>
+            criarMapa();
+
+            var dados = [
+            {
+                value: 89,
+                color:'#428BCA',
+                highlight: '#337AB7',
+                label: 'DADO 1'
+            },
+            {
+                value: 11,
+                color: '#EEE',
+                highlight: '#DDD',
+                label: 'DADO 2'
+            }
+            ];
+            criarDoughnut(dados, 'grafico1');
+
+            var dados = [
+            {
+                value: 38,
+                color:'#428BCA',
+                highlight: '#337AB7',
+                label: 'DADO A1'
+            },
+            {
+                value: 52,
+                color: '#EEE',
+                highlight: '#DDD',
+                label: 'DADO B2'
+            }
+            ];
+            criarDoughnut(dados, 'grafico2');
+        </script>
+    </body>
+    </html>

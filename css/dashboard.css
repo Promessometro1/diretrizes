@@ -1,0 +1,56 @@
+body {
+  padding-top: 50px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #F5F5F5;
+  border-right: 1px solid #EEE;
+}
+
+.nav-sidebar {
+  margin-right: -21px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+.main {
+  padding: 20px 40px;
+}
+
+.main .page-header {
+  margin-top: 0;
+}
+
+.div-cor {
+  height:15rem;
+  border-radius:15px;
+}
+
+.div-cor code {
+  position:absolute;
+  margin-top:6.2rem;
+  margin-left: -2.8rem;
+}
+
+.placeholder {
+  text-align: center;
+}
